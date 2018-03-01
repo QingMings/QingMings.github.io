@@ -79,7 +79,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/01/Ubuntu 16.04 安装Python3.6/">JavaFx 8 HelloWorld</a>
+      <a class="article-title" href="/2018/03/01/Ubuntu 16.04 安装Python3.6/">Ubuntu 16.04 安装Python3.6</a>
     </h1>
   
 
@@ -90,7 +90,9 @@
         <h1 id="Ubuntu-16-04-安装Python3-6"><a href="#Ubuntu-16-04-安装Python3-6" class="headerlink" title="Ubuntu 16.04 安装Python3.6"></a>Ubuntu 16.04 安装Python3.6</h1><p>在Ubuntu 16.04 版本中已经安装了python2.7和 python3.5的版本。<br>最近打算学下Python ,跟着廖雪峰的Python教程，里面用到Python3.6,来安装一下吧       </p>
 <ol>
 <li><p>添加第三方软件源（因为python3.6没在ubuntu的仓库中？）</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    sudo add-apt-repository ppa:jonathonf/python-3.6</span><br><span class="line">    ``` </span><br><span class="line">2. 更新包并安装Python3.6   </span><br><span class="line">    ```bash</span><br><span class="line">    sudo apt-get update</span><br><span class="line">    sudo apt-get install python3.6</span><br><span class="line">    ```     </span><br><span class="line">   如果遇到以下问题  </span><br><span class="line">    ```bash</span><br><span class="line">    E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)</span><br><span class="line">    E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新包并安装Python3.6   </p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> sudo apt-get update</span><br><span class="line"> sudo apt-get install python3.6</span><br><span class="line"> ```     </span><br><span class="line">如果遇到以下问题  </span><br><span class="line"> ```bash</span><br><span class="line"> E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)</span><br><span class="line"> E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?</span><br></pre></td></tr></table></figure>
 <p>是因为apt还在运行，怎么办呢？找出来进程，然后杀掉</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ps -A | grep apt</span><br><span class="line">3390 ?        00:00:01 aptd</span><br><span class="line">sudo <span class="built_in">kill</span> 3390</span><br></pre></td></tr></table></figure>
 <p> 输入python 然后两次Tab 键</p>
@@ -101,7 +103,9 @@
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.5 1</span><br><span class="line"></span><br><span class="line">sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 2</span><br><span class="line"></span><br><span class="line">sudo update-alternatives --config python3</span><br></pre></td></tr></table></figure>
 <p> 完成以上步骤在来检查一下</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~$ python3 -V</span><br><span class="line">Python 3.6.3</span><br></pre></td></tr></table></figure>
-<p> ok，Python 3.6 安装搞定<br>3.刚才这句<code>sudo update-alternatives --config python3</code> 还可以切换Python版本</p>
+<p> ok，Python 3.6 安装搞定</p>
+</li>
+<li><p>刚才这句<code>sudo update-alternatives --config python3</code> 还可以切换Python版本</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">~$ sudo update-alternatives --config python3</span><br><span class="line">There are 2 choices <span class="keyword">for</span> the alternative python3 (providing /usr/bin/python3).</span><br><span class="line"></span><br><span class="line">  Selection    Path                Priority   Status</span><br><span class="line">------------------------------------------------------------</span><br><span class="line">* 0            /usr/bin/python3.6   2         auto mode</span><br><span class="line">  1            /usr/bin/python3.5   1         manual mode</span><br><span class="line">  2            /usr/bin/python3.6   2         manual mode</span><br><span class="line"></span><br><span class="line">Press &lt;enter&gt; to keep the current choice[*], or <span class="built_in">type</span> selection number: 1</span><br><span class="line">update-alternatives: using /usr/bin/python3.5 to provide /usr/bin/python3 (python3) <span class="keyword">in</span> manual mode</span><br></pre></td></tr></table></figure>
 <p> 我现在有两个版本的python，‘ * ’ 号现在选择的是3.6的版本，那我输入1，这时候在检查下版本</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~$ python3 -V </span><br><span class="line">Python 3.5.2</span><br></pre></td></tr></table></figure>
@@ -114,7 +118,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fx.qingmings.cn/2018/03/01/Ubuntu 16.04 安装Python3.6/" data-id="cje81qwc80000sll7scsrlkd2" class="article-share-link">Share</a>
+      <a data-url="http://fx.qingmings.cn/2018/03/01/Ubuntu 16.04 安装Python3.6/" data-id="cje824kkh0001vxl7kq35f4cr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -171,7 +175,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fx.qingmings.cn/2018/01/14/JavaFx-8-HelloWorld/" data-id="cje81qwcf0001sll7ojn0tcco" class="article-share-link">Share</a>
+      <a data-url="http://fx.qingmings.cn/2018/01/14/JavaFx-8-HelloWorld/" data-id="cje824kkb0000vxl76exyvmrg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaFx/">JavaFx</a></li></ul>
@@ -228,7 +232,7 @@
       <ul>
         
           <li>
-            <a href="/2018/03/01/Ubuntu 16.04 安装Python3.6/">JavaFx 8 HelloWorld</a>
+            <a href="/2018/03/01/Ubuntu 16.04 安装Python3.6/">Ubuntu 16.04 安装Python3.6</a>
           </li>
         
           <li>
