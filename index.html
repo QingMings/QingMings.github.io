@@ -65,6 +65,74 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Ubuntu 安装sogou输入法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/01/Ubuntu 安装sogou输入法/" class="article-date">
+  <time datetime="2018-03-01T08:56:32.000Z" itemprop="datePublished">2018-03-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/01/Ubuntu 安装sogou输入法/">Ubuntu 安装sogou输入法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>到<a href="https://pinyin.sogou.com/linux/?r=pinyin" target="_blank" rel="noopener">搜狗输入法官网</a>下载<a href="https://pinyin.sogou.com/linux/download.php?f=linux&amp;bit=64" target="_blank" rel="noopener">linux版本x64</a>的输入法</li>
+<li>linux版本的搜狗输入法是基于fcitx这个输入法系统的所以要先安装这个东东</li>
+<li><p>添加软件源</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ sudo add-apt-repository ppa:fcitx-team/nightly</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新软件源</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ sudo apt-get update</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装fcitx </p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ sudo apt-get install fcitx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装fcitx配置工具</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ sudo apt-get install fcitx-config-gtk</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装fcitx table-all 软件包</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ sudo apt-get install fcitx-table-all</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 im-switch 工具</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ sudo apt-get install im-switch</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>切换到下载好的linux版本搜狗输入法的目录<code>~/Downloads</code></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~$ <span class="built_in">cd</span> ~/Downloads</span><br><span class="line">~/Downloads $ sudo dpkg -i sogoupinyin_2.2.0.0102_amd64.deb</span><br></pre></td></tr></table></figure>
+<p> 这里可能安装出错，暂时不用管，接着下一步</p>
+</li>
+<li>设置语言选项 到<code>system settings</code>-&gt;<code>Language support</code> ，将键盘输入法由默认的<code>iBus</code> 设置为 <code>fcitx</code> ,然后注销一下重新登录</li>
+<li>搜索 <code>fcitx configuration</code> 添加 sogou输入法 并设置为默认<br>####如果在系统菜单栏出现两个输入法图标<br>这个是由于<code>fxitx-ui-qimpanel</code> 导致的，简单粗暴一点，卸载掉它,然后重启系统<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ sudo apt-get purge fcitx-ui-qimpanel</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>全文完。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fx.qingmings.cn/2018/03/01/Ubuntu 安装sogou输入法/" data-id="cje8aa9dp0003qql78wcj9kfp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Ubuntu 16.04 安装Python3.6" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/03/01/Ubuntu 16.04 安装Python3.6/" class="article-date">
@@ -119,7 +187,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fx.qingmings.cn/2018/03/01/Ubuntu 16.04 安装Python3.6/" data-id="cje8289at0001wwl7fwlmii89" class="article-share-link">Share</a>
+      <a data-url="http://fx.qingmings.cn/2018/03/01/Ubuntu 16.04 安装Python3.6/" data-id="cje8aa9dg0001qql7yg47quaz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -176,7 +244,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fx.qingmings.cn/2018/01/14/JavaFx-8-HelloWorld/" data-id="cje8289am0000wwl7drw8k6uw" class="article-share-link">Share</a>
+      <a data-url="http://fx.qingmings.cn/2018/01/14/JavaFx-8-HelloWorld/" data-id="cje8aa9da0000qql7jm81kv3g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaFx/">JavaFx</a></li></ul>
@@ -201,7 +269,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaFx/">JavaFx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaFx/">JavaFx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -211,7 +279,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaFx/" style="font-size: 10px;">JavaFx</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+      <a href="/tags/JavaFx/" style="font-size: 10px;">JavaFx</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a>
     </div>
   </div>
 
@@ -220,7 +288,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -231,6 +299,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/01/Ubuntu 安装sogou输入法/">Ubuntu 安装sogou输入法</a>
+          </li>
         
           <li>
             <a href="/2018/03/01/Ubuntu 16.04 安装Python3.6/">Ubuntu 16.04 安装Python3.6</a>
