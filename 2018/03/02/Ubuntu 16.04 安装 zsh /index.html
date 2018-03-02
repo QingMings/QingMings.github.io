@@ -5,18 +5,20 @@
   
 
   
-  <title>归档: 2018/3 | QingMings</title>
+  <title>Ubuntu 16.04 安装 zsh | QingMings</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="fxbog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="QingMings">
-<meta property="og:url" content="http://fx.qingmings.cn/archives/2018/03/index.html">
+  <meta name="description" content="安装 zsh  1~$ sudo apt-get install zsh  安装 oh-my-zsh(zsh的一个插件，因为zsh强大而复杂，这个插件用来管理它)  1~$ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh 如果没安装git，请先安装git   1~$ sudo">
+<meta name="keywords" content="Ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu 16.04 安装 zsh">
+<meta property="og:url" content="http://fx.qingmings.cn/2018/03/02/Ubuntu 16.04 安装 zsh /index.html">
 <meta property="og:site_name" content="QingMings">
-<meta property="og:description" content="fxbog">
+<meta property="og:description" content="安装 zsh  1~$ sudo apt-get install zsh  安装 oh-my-zsh(zsh的一个插件，因为zsh强大而复杂，这个插件用来管理它)  1~$ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh 如果没安装git，请先安装git   1~$ sudo">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-02T05:06:05.929Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="QingMings">
-<meta name="twitter:description" content="fxbog">
+<meta name="twitter:title" content="Ubuntu 16.04 安装 zsh">
+<meta name="twitter:description" content="安装 zsh  1~$ sudo apt-get install zsh  安装 oh-my-zsh(zsh的一个插件，因为zsh强大而复杂，这个插件用来管理它)  1~$ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh 如果没安装git，请先安装git   1~$ sudo">
   
     <link rel="alternate" href="/atom.xml" title="QingMings" type="application/atom+xml">
   
@@ -63,78 +65,69 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/03/02/Ubuntu 16.04 安装 zsh /" class="archive-article-date">
-  <time datetime="2018-03-02T05:05:22.000Z" itemprop="datePublished">3月 2</time>
+        <section id="main"><article id="post-Ubuntu 16.04 安装 zsh " class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/02/Ubuntu 16.04 安装 zsh /" class="article-date">
+  <time datetime="2018-03-02T05:05:22.000Z" itemprop="datePublished">2018-03-02</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/02/Ubuntu 16.04 安装 zsh /">Ubuntu 16.04 安装 zsh</a>
+    <h1 class="article-title" itemprop="name">
+      Ubuntu 16.04 安装 zsh
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/03/01/Ubuntu 安装sogou输入法/" class="archive-article-date">
-  <time datetime="2018-03-01T08:56:32.000Z" itemprop="datePublished">3月 1</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/01/Ubuntu 安装sogou输入法/">Ubuntu 安装sogou输入法</a>
-    </h1>
-  
+        <ol>
+<li><p>安装 zsh</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ sudo apt-get install zsh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 oh-my-zsh(zsh的一个插件，因为zsh强大而复杂，这个插件用来管理它)</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</span><br></pre></td></tr></table></figure>
+<p>如果没安装git，请先安装git </p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ sudo apt-get install git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置 zsh 为默认 shell </p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ sudo usermod -s /bin/zsh username</span><br></pre></td></tr></table></figure>
+<p> 然后重启计算机在打开终端，这时候已经变成这样</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  ~</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>全文完</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/03/01/Ubuntu 16.04 安装Python3.6/" class="archive-article-date">
-  <time datetime="2018-03-01T03:42:02.000Z" itemprop="datePublished">3月 1</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/01/Ubuntu 16.04 安装Python3.6/">Ubuntu 16.04 安装Python3.6</a>
-    </h1>
-  
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fx.qingmings.cn/2018/03/02/Ubuntu 16.04 安装 zsh /" data-id="cje9h7o1c00014wl7eerrkqqz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/03/01/Ubuntu 安装sogou输入法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Ubuntu 安装sogou输入法</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         
